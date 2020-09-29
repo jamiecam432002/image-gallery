@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Card from "./Card";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [images, setImages] = useState([
+    { url: "https://source.unsplash.com/random/1" },
+    { url: "https://source.unsplash.com/random/2" },
+    { url: "https://source.unsplash.com/random/3" },
+    { url: "https://source.unsplash.com/random/4" },
+    { url: "https://source.unsplash.com/random/5" },
+    { url: "https://source.unsplash.com/random/6" },
+  ]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="cardContainer">
+        <Card images={images} />
+      </div>
+      <div className="btnContainer">
+        <button>Remove</button>
+        <button>Add</button>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
